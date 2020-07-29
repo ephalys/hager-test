@@ -1,0 +1,12 @@
+.quote {
+    padding: 50px;
+
+    @media (max-width: $screen-max-xs) {
+        padding: 30px;
+    }
+
+    blockquote {
+        color: $blackgrey;
+        font-size: 22px;
+    }
+}

@@ -1,6 +1,10 @@
 .hero {
     .swiper-home, .swiper-wrapper, .swiper-slide {
        min-height: calc(100vh - 60px);
+
+        @media (max-width: $screen-max-xs) {
+            min-height: calc(50vh - 60px);
+        }
     }
 
     .swiper-slide {
@@ -35,11 +39,14 @@
             z-index: 2;
             max-width: 80%;
 
-            @media (max-width: $screen-max-md) {
+            @media (min-width: $screen-min-xs) and (max-width: $screen-max-md) {
                 padding: 50px;
                 max-width: 100%;
             }
-
+            @media (max-width: $screen-max-xs) {
+                padding: 30px;
+                max-width: 100%;
+            }
             a {
                 margin-top: 2rem;
             }
