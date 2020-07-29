@@ -1,6 +1,10 @@
 .button {
     border-radius: 40px;
     padding: 10px 35px;
+
+    & svg {
+      margin-right: 10px;
+    }
     &.button-red {
         background-color: $primary;
         transition: color, background-color .3s;
@@ -9,6 +13,18 @@
             background-color: $white;
             transition: color, background-color .3s;
             color: $primary;
+        }
+    }
+
+    &.button-white {
+        background-color: $white;
+        color: $primary;
+        border: 1px solid $white;
+        transition: color, border, background-color .3s;
+        &:hover {
+            background-color: $primary;
+            transition: color, border, background-color .3s;
+            color: $white;
         }
     }
 }

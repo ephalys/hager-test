@@ -1,0 +1,23 @@
+.about {
+    display: flex;
+
+    &-left {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    &-right {
+        color: $white;
+        background-color: $primary;
+        padding: 60px;
+
+        @media (max-width: $screen-max-sm) {
+            padding: 30px 15px;
+        }
+
+        h2, p {
+            margin-bottom: 30px;
+        }
+    }
+}
