@@ -1,0 +1,44 @@
+.works {
+     &-item {
+         display: flex;
+         position: relative;
+         min-height: 350px;
+         background-size: cover;
+         background-repeat: no-repeat;
+         color: $white;
+         transition: color .3s;
+
+         &:hover {
+             color: #ccc;
+             transition: color .3s;
+             .overlay {
+                 opacity: 1;
+                 transition: opacity .5s;
+             }
+         }
+
+         @media (max-width: $screen-max-sm) {
+             min-height: 250px;
+         }
+
+         .overlay {
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             opacity: .8;
+             background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+             z-index: 0;
+             pointer-events: none;
+             transition: opacity .5s;
+         }
+
+         &-content {
+             position: relative;
+             z-index: 1;
+             margin: 30px 15px 0 15px;
+             width: 100%;
+         }
+     }
+}
