@@ -1,0 +1,47 @@
+ul.little_arrow{
+  li{
+    position: relative;
+    padding-left: 35px;
+    @extend .icon_font;
+    &:before{
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $primaryred;
+      content: $icon-little-arrow;
+    }
+  }
+}
+ul.large_arrow{
+  li{
+    position: relative;
+    padding-left: 35px;
+    @extend .icon_font;
+    &:before{
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $primaryred;
+      content: $icon-large-arrow;
+    }
+  }
+}
+
+.text-base{
+  ul{
+    li{
+      margin-bottom: 1rem;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      a{
+        color: $black;
+        text-decoration: underline;
+        @include transition(all .5s ease);
+        &:hover, &:focus{
+          color: $primaryred;
+        }
+      }
+    }
+  }
+}

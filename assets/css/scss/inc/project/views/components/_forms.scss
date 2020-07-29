@@ -1,0 +1,646 @@
+.node--type-demande-de-devis{
+  background-color: #F4F7FC;
+  padding-bottom: 60px;
+}
+.container-form {
+  background: #fff;
+  @include box-shadow(0px 2px 45px rgba(182, 182, 182, 0.337686));
+  padding-left: 30px;
+  padding-right: 30px;
+  @extend .text-l;
+  // Input text + email
+  .form-type-textfield,
+  .form-type-email {
+    label {
+      color: $black;
+      font-family: $rubik-medium;
+    }
+
+    .form-required {
+      &:after {
+        content: '*';
+        height: auto;
+        width: auto;
+        vertical-align: initial;
+        background: none;
+      }
+    }
+
+    input {
+      padding: 10px 16px;
+      border: 1px solid $regulargrey;
+      width: 100%;
+      margin-top: 0;
+
+      &::placeholder {
+        color: $darkgrey;
+      }
+
+      &:focus {
+        outline: 2px solid $electricblue;
+      }
+    }
+
+    &.form-item--error {
+      label {
+        color: $primaryred;
+      }
+
+      input {
+        border: 2px solid $primaryred;
+
+        &::placeholder {
+          color: $primaryred;
+        }
+
+        &:focus {
+          outline: 2px solid $primaryred;
+        }
+      }
+    }
+  }
+
+  // Input radios
+  .form-type-radios {
+    .form-required {
+      color: $black;
+      font-family: $rubik-medium;
+
+      &:after {
+        content: '*';
+        background: none;
+        height: auto;
+        width: auto;
+        vertical-align: initial;
+        margin: 0;
+      }
+    }
+
+    .form-radios {
+      display: flex;
+      .form-required{
+        margin: 0;
+      }
+
+      .form-type-radio {
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        label {
+          padding: 3px 0px 3px 32px;
+          position: relative;
+          cursor: pointer;
+
+          &:before {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 1px solid $regulargrey;
+            border-radius: 50%;
+            left: 0;
+            bottom: 0;
+          }
+        }
+
+        input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+
+          &:checked {
+            & + label {
+              &:after {
+                content: '';
+                position: absolute;
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background-color: $electricblue;
+                border-radius: 50%;
+                left: 8px;
+                bottom: 8px;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.form-item-vous-etes,
+    &.form-item-votre-habitat {
+      margin: 0;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid $lightgrey;
+    }
+  }
+
+  // Input checkbox
+  .form-type-checkboxes {
+    .form-required {
+      color: $black;
+      font-family: $rubik-medium;
+
+      &:after {
+        content: '*';
+        background: none;
+        height: auto;
+        width: auto;
+        vertical-align: initial;
+      }
+    }
+
+    &.form-item-notifications {
+      .form-checkboxes {
+        .form-type-checkbox {
+          margin-top: 0;
+          margin-bottom: 12px;
+
+          label {
+            position: relative;
+            display: block;
+            padding-left: 35px;
+            text-indent: 0;
+            cursor: pointer;
+
+            &:before {
+              content: '';
+              position: absolute;
+              display: inline-block;
+              width: 24px;
+              height: 24px;
+              border: 1px solid $regulargrey;
+              left: 0;
+              bottom: 0;
+            }
+          }
+
+          input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:checked {
+              & + label {
+                &:after {
+                  content: '';
+                  position: absolute;
+                  display: inline-block;
+                  left: 9px;
+                  top: auto;
+                  width: 7px;
+                  height: 12px;
+                  border: solid $electricblue;
+                  border-width: 0 3px 3px 0;
+                  @include transform(rotate(45deg));
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.form-item-besoins {
+      .form-checkboxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(280px, 1fr));
+        column-gap: 15px;
+
+        .form-type-checkbox {
+          border-radius: 8px;
+          text-align: center;
+          display: flex;
+
+          label {
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+            font-family: $rubik-medium;
+            color: $black;
+            margin: 0;
+            width: -webkit-fill-available;
+            padding: 80px 65px 15px 65px;
+            background-color: $white;
+            border: 1px solid $lightgrey;
+            border-radius: 8px;
+
+            &:before {
+              @extend [class*=" icon-"];
+              @extend .icon--fenetre;
+              font-size: 3.5rem;
+              position: absolute;
+              display: inline-block;
+              color: $electricblue;
+              left: 50%;
+              top: 35%;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:checked {
+              & + label {
+                background-color: $electricblue;
+                color: $white;
+                border: 1px solid $electricblue;
+
+                &:before {
+                  color: $white;
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  display: inline-block;
+                  right: 10px;
+                  top: 5px;
+                  width: 10px;
+                  height: 16px;
+                  border: solid $white;
+                  border-width: 0 3px 3px 0;
+                  @include transform(rotate(45deg));
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Fieldset
+  .webform-type-fieldset {
+    border: 1px solid $lightgrey;
+    border-radius: 8px;
+
+    legend {
+      width: auto;
+      margin-bottom: 0;
+
+      .fieldset-legend {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-family: $rubik-medium;
+
+        &:before{
+          @extend [class*=" icon-"];
+          font-size: 3.5rem;
+          color: $electricblue;
+          padding-right: 10px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    &.icon-fenetre {
+      legend {
+        .fieldset-legend {
+          &:before {
+            @extend .icon--fenetre;
+          }
+        }
+      }
+    }
+
+    &.icon-portails {
+      legend {
+        .fieldset-legend {
+          &:before {
+            @extend .icon--portails;
+          }
+        }
+      }
+    }
+
+
+    &.icon-portes {
+      legend {
+        .fieldset-legend {
+          &:before {
+            @extend .icon--portes;
+          }
+        }
+      }
+    }
+
+    &.icon-store {
+      legend {
+        .fieldset-legend {
+          &:before {
+            @extend .icon--store;
+          }
+        }
+      }
+    }
+
+    &.icon-volets {
+      legend {
+        .fieldset-legend {
+          &:before {
+            @extend .icon--volets;
+          }
+        }
+      }
+    }
+
+    &.icon-portes-garage {
+      legend {
+        .fieldset-legend {
+          &:before {
+            @extend .icon--portes-garage;
+          }
+        }
+      }
+    }
+
+    .form-type-select {
+      label {
+        display: block;
+        color: $black;
+        font-family: $rubik-medium;
+
+        &:after {
+          content: '*';
+          background-image: none;
+          height: auto;
+          width: auto;
+          vertical-align: initial;
+          background-repeat: none;
+          background-size: none;
+        }
+      }
+
+      .bootstrap-select {
+        box-shadow: none;
+
+        .dropdown-toggle {
+          -webkit-appearance: none;
+          padding: 10px 45px 10px 15px;
+          background: #fff;
+          border: 1px solid $regulargrey;
+          border-radius: 0;
+          position: relative;
+          @extend .icon-arrow-bottom;
+          box-shadow: none;
+
+          &:before {
+            @extend [class*=" icon-"];
+            color: $electricblue;
+            position: absolute;
+            border: 0;
+            right: 16px;
+            bottom: 13px;
+            font-size: 14px;
+            display: inline-block;
+            height: 13px;
+          }
+
+          &:after {
+            content: none;
+          }
+
+          &:focus {
+            outline: none;
+            outline-offset: none;
+            border: 2px solid $electricblue;
+          }
+
+          .filter-option {
+            text-transform: initial;
+          }
+        }
+
+        .dropdown-menu {
+          .inner {
+            max-height: 200px;
+
+            .dropdown-menu {
+              border: 0;
+
+              .dropdown-item {
+
+                &:hover,
+                &.active {
+                  color: $electricblue;
+                }
+              }
+            }
+          }
+
+          &.show {
+            border-radius: 0;
+            border: 1px solid $regulargrey;
+          }
+        }
+      }
+    }
+  }
+
+  // Actions
+  .form-actions {
+    text-align: center;
+    margin-bottom: 60px;
+
+    .cta {
+      @extend .btn;
+      @extend .btn-primary;
+      @extend .extra-large;
+      @extend .icon-next;
+      padding: 20px 35px 20px 20px;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        background: $primaryred;
+        border-color: transparent;
+      }
+
+      &:active {
+        background: $primaryred !important;
+        border-color: transparent !important;
+        @include box-shadow(none);
+      }
+
+      &:before {
+        @extend [class*=" icon-"];
+        position: absolute;
+        right: 12px;
+        bottom: 22px;
+      }
+    }
+
+    .back_cta {
+      float: left;
+      -webkit-appearance: none;
+      padding: 0;
+      border: 0;
+      color: $coolgrey;
+      padding: 20px 0;
+      @extend .icon-prev;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:before {
+        @extend [class*=" icon-"];
+        font-size: 9px;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  // Msg errors
+  // Msg input
+  .form-item--error {
+    .form-item--error-message {
+      margin-top: 10px;
+      color: $primaryred;
+      font-family: $rubik-regular;
+      @extend .text-base;
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  // Msg top
+  .messages {
+    padding: 15px 20px 15px 20px;
+    border-radius: 0;
+
+    &.messages--error {
+      box-shadow: -8px 0 0 $primaryred;
+      background-image: none;
+
+      .item-list--comma-list {
+        .item-list__comma-list {
+          li {
+            a {
+              color: $darkgrey;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Progress bar
+  .webform-progress {
+    .webform-progress-tracker {
+      margin: 0;
+      padding: 0;
+
+      .progress-step {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid $coolgrey;
+        font-family: $rubik-medium;
+
+        .progress-marker {
+          margin: 0;
+          border: 1px solid $regulargrey;
+          background-color: $white;
+          color: $black;
+        }
+
+        .progress-text {
+          color: $black;
+          padding-top: 0;
+        }
+
+        &:after {
+          content: none;
+        }
+
+        &.is-active {
+          border-bottom: 2px solid $electricblue;
+
+          .progress-marker {
+            background-color: $electricblue;
+            border: 2px solid $electricblue;
+            color: $white;
+          }
+
+          .progress-text {
+            .progress-title {
+              font-weight: unset;
+            }
+          }
+        }
+
+        &.is-complete {
+          .progress-marker {
+            background-color: $green;
+            border: 2px solid $green;
+            color: $white;
+
+            i {
+              &:before {
+                font-size: 11px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .webform-confirmation__message {
+    text-align: center;
+    padding: 60px;
+
+    .--general {
+      & > div {
+        padding-bottom: 20px;
+
+        &:last-child {
+          padding-bottom: 30px;
+        }
+      }
+    }
+
+    .--perso {
+      & > div {
+        padding-bottom: 20px;
+
+        a {
+          display: block;
+          color: $black;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .form-type-processed-text{
+    font-family: $rubik-medium;
+    @extend .text-s;
+    a{
+      color: $black;
+      text-decoration: underline;
+      @include transition(all .5s ease);
+      &:hover, &:focus{
+        color: $primaryred;
+      }
+    }
+  }
+}
+

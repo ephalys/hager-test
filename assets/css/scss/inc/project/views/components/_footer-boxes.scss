@@ -1,0 +1,46 @@
+.footer-boxes {
+    /*
+    margin-top: 30px;
+    */
+    padding: 0 15px;
+    .row {
+
+        .single-box {
+            padding: 0;
+            width: 33.33%;
+            min-height: 250px;
+
+            @media (max-width: $screen-max-sm) {
+                width: 100%;
+                margin: 0;
+            }
+
+            .text {
+                height: 100%;
+                padding: 25px 50px;
+                color: $white;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+
+                @media (max-width: $screen-max-sm) {
+                    padding: 20px;
+                }
+
+                @media (min-width: $screen-min-sm) and (max-width: $screen-max-md) {
+                    padding: 20px 40px;
+                }
+
+                .title {
+                    margin-top: 15px;
+                }
+                .subtitle {
+
+                }
+                .btn {
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}

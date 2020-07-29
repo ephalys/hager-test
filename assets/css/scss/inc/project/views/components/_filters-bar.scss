@@ -1,0 +1,106 @@
+.filters-bar {
+  z-index: 1;
+  position: relative;
+  padding: 0 15px;
+  margin-bottom: 25px;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $white;
+    box-shadow: 0 2px 45px rgba(0,0,0,.15);
+    margin: -55px auto 0;
+    max-width: 700px;
+    padding: 0;
+
+    @media (max-width: $screen-max-sm) {
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media (max-width: $screen-max-xs) {
+      padding: 0;
+    }
+
+
+    li {
+      list-style: none;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 22px;
+        text-transform: uppercase;
+        color: $black;
+        transition: all .3s;
+        // Anims
+        position: relative;
+        overflow: hidden;
+        transform: perspective(1px) translateZ(0);
+
+        @media (max-width: $screen-max-sm) {
+          padding: 15px;
+        }
+
+        @media (max-width: $screen-max-xs) {
+          padding: 15px 5px;
+          @include font-size(9px);
+        }
+
+        &.is-active {
+          &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $primaryred;
+            height: 3px;
+            transition-property: left, right;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+          }
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          left: 51%;
+          right: 51%;
+          bottom: 0;
+          background: $primaryred;
+          height: 3px;
+          transition-property: left, right;
+          transition-duration: 0.3s;
+          transition-timing-function: ease-out;
+        }
+
+        &:hover {
+          &:before {
+            left: 0;
+            right: 0;
+          }
+        }
+
+        .picto{
+          text-align: center;
+          margin-bottom: 7px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @media (max-width: $screen-max-sm) {
+            max-height: 30px;
+          }
+          img {
+            max-height: 32px;
+          }
+        }
+      }
+    }
+  }
+}

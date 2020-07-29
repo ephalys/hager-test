@@ -1,0 +1,169 @@
+.footer-affix {
+    @media (max-width: $screen-max-sm) {
+        padding: 0 15px;
+    }
+    .row {
+        .footer-affix-block {
+            display: flex;
+            // padding: 0 50px;
+            justify-content: space-between;
+
+            @media (max-width: $screen-max-md) {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .footer-logo, .footer-socials, .footer-infos {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 33.33%;
+
+                @media (max-width: $screen-max-md) {
+                    width: 100%;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+
+          .footer-infos{
+            ul{
+              padding: 0;
+              margin: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              li{
+                list-style: none;
+                margin: 0 10px;
+                &:first-child {
+                  margin-left: 0;
+                }
+                &:last-child {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+
+            .footer-logo {
+                @media (max-width: $screen-max-sm) {
+                    margin-bottom: 10px;
+                    flex-direction: column;
+                }
+                .logo {
+                    margin-right: 15px;
+
+                    @media (max-width: $screen-max-sm) {
+                        margin-right: 0;
+                    }
+                }
+                .partner {
+                    position: relative;
+                    padding-left: 16px;
+                    margin-right: 15px;
+                    letter-spacing: 1px;
+                    color: $coolgrey;
+                    font-family: $rubik-medium;
+                    white-space: nowrap;
+
+                    @include font-size(14px);
+
+                    @media (max-width: $screen-max-sm) {
+                        margin-top: 10px;
+                    }
+
+                    @media (max-width: $screen-max-xxs) {
+                        max-width: 150px;
+                        text-align: center;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        display: block;
+                        width: 1px;
+                        height: 25px;
+                        background: $lightgrey;
+                        @media (max-width: $screen-max-sm) {
+                            display: none;
+                        }
+                    }
+
+                    a {
+                        color: $coolgrey;
+                        text-decoration: underline;
+                    }
+                }
+                .badge-custom {
+                    @media (max-width: $screen-max-sm) {
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                    }
+                }
+            }
+
+            .footer-socials {
+                @media (max-width: $screen-max-md) {
+                    margin: 10px 0;
+                }
+                a {
+                    color: $black;
+                    font-size: 24px;
+                    margin: 0 15px;
+                    transition: color 0.3s ease-in;
+
+                    &.facebook {
+                        &:hover {
+                            color: $bc-facebook;
+                        }
+                    }
+                    &.instagram {
+                        &:hover {
+                            color: $bc-instagram-4;
+                        }
+                    }
+                    &.twitter {
+                        &:hover {
+                            color: $bc-twitter;
+                        }
+                    }
+                    &.pinterest {
+                        &:hover {
+                            color: $bc-pinterest;
+                        }
+                    }
+                    &.youtube {
+                        &:hover {
+                            color: $bc-youtube;
+                        }
+                    }
+                    &.feed {
+                        &:hover {
+                            color: $bc-rss-2;
+                        }
+                    }
+                }
+            }
+
+            .footer-infos {
+                @media (max-width: $screen-max-sm) {
+                    margin-top: 10px;
+                }
+                a {
+                    color: $coolgrey;
+                    @include font-size(14px);
+                    font-family: $rubik-medium;
+                    letter-spacing: 1px;
+                    @include underline-from-left($coolgrey);
+                }
+            }
+        }
+    }
+}

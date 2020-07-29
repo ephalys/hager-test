@@ -1,0 +1,38 @@
+.row-articles {
+    .row {
+        .single-article {
+            padding: 0;
+
+            @media (min-width:$screen-min-sm) and (max-width: $screen-max-md) {
+                padding: 0 15px;
+                &:nth-child(4n), &:nth-child(4n-1) {
+                    margin-top: 30px;
+                }
+            }
+
+            @media (max-width: $screen-max-sm) {
+                margin-top: 45px;
+            }
+
+            img {
+                width: 100%;
+                min-height: 300px;
+                object-fit: cover;
+            }
+
+            .content-single-article {
+                margin-top: 30px;
+                padding-right: 15px;
+
+                @media (max-width: $screen-max-sm) {
+                    margin-top: 20px;
+                    padding: 0 15px;
+                }
+
+                .title {
+                    padding-bottom: 15px;
+                }
+            }
+        }
+    }
+}

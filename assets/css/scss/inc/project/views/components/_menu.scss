@@ -1,0 +1,60 @@
+.menu {
+    position: fixed;
+    width: 250px;
+    right: -250px;
+    height: calc(100% - #{$header});
+    background-color: $indigo;
+    z-index: 100;
+    @include box-shadow(9px 9px 250px rgba(0, 0, 0, 0.12), 24px 24px 200px rgba(0, 0, 0, 0.14), 11px 11px 100px rgba(0, 0, 0, 0.2));
+    top: $header;
+
+    @media (max-width: $screen-max-md) {
+        top: $header-md;
+    }
+
+    @include transition(right .5s ease);
+
+    &.active {
+        right: 0;
+        @include transition(right .5s ease);
+    }
+
+    ul {
+        padding: 25px;
+        list-style: none;
+        margin: 0;
+        overflow-y: auto;
+        height: 100%;
+
+        li {
+            margin-top: 20px;
+            &:first-child{
+                margin-top: 0;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                color: $white;
+                @include font-size(14px);
+                @include transition(color .3s);
+
+                &:hover {
+                    color: $calmred;
+                    @include transition(color .3s);
+                }
+
+                &:before {
+                    display: inline-block;
+                    margin-right: 15px;
+                    font-size: 20px;
+                }
+
+                p {
+                    display: inline-block;
+                }
+
+            }
+        }
+    }
+}

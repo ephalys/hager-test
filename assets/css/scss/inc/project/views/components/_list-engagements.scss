@@ -1,0 +1,17 @@
+.list-engagements {
+  .row {
+    .title, .text {
+      @media (max-width: $screen-max-sm) {
+        text-align: left;
+      }
+    }
+
+    .left-side, .right-side {
+      align-items: flex-start;
+    }
+
+    img {
+      max-height: 530px;
+    }
+  }
+}

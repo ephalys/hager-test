@@ -1,0 +1,39 @@
+.container-presse {
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+
+  .content-presse {
+    &.img-full {
+      img {
+        width: 100%;
+        //margin-top: -115px;
+      }
+    }
+
+    &.text-full {
+      p {
+        margin-bottom: 20px;
+      }
+    }
+
+    &.img-text {
+      p {
+        @media (max-width: $screen-max-sm) {
+          padding-top: 20px;
+        }
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &.download {
+      margin-bottom: 140px;
+
+      @media (max-width: $screen-max-sm) {
+       margin-bottom: 30px;
+      }
+    }
+  }
+}

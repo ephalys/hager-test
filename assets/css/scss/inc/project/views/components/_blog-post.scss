@@ -1,0 +1,238 @@
+/*
+** General aux blocs blog
+*/
+.box-shadow {
+  &.blog-post {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.tag-post {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  margin-bottom: 0;
+}
+
+.blog-post {
+  &:last-child {
+    margin-bottom: 0!important;
+  }
+  p {
+    &.text-xl {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+/*
+** Masonery grid - setting app.js
+*/
+
+.blog-grid {
+  .blog-item {
+    height: 300px;
+    margin-bottom: 30px;
+
+    &>div, &>article {
+      height: 100%;
+      h2{
+        a{
+          color: $black;
+          text-decoration: none;
+          @include underline-from-left($black);
+        }
+      }
+      .text {
+        margin-bottom: 12px;
+      }
+      &.blog-img-shadow{
+        h2{
+          a{
+            color: $white;
+            text-decoration: none;
+            @include underline-from-left($white);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $screen-max-lg) {
+    .blog-item {
+      height: auto;
+    }
+  }
+}
+
+/*
+** Blocs blog
+ */
+
+// POST IMG TOP
+.blog-img-top {
+  /*    height: 300px;*/
+
+  .header-blog-img-top {
+    //max-height: 160px;
+    position: relative;
+
+    img {
+      width: 100%;
+      //object-fit: cover;
+      display: block;
+      //max-height: 160px;
+    }
+  }
+
+  .content-blog-img-top {
+    padding: 22px 20px 20px 22px;
+
+    .text {
+      margin-bottom: 20px;
+    }
+
+    a {
+      .medium {
+        padding: 0;
+      }
+    }
+  }
+}
+
+// POST IMG FULL LEFT
+.blog-img-left {
+  display: flex;
+
+  .blog-left {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+
+    .tag-post {
+      opacity: 0;
+    }
+
+    img {
+      object-fit: cover;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    @media (max-width: $screen-max-sm) {
+      img {
+        max-height: 160px;
+      }
+    }
+  }
+
+  @media (max-width: $screen-max-sm) {
+    .blog-left {
+      .tag-post {
+        opacity: 1;
+      }
+    }
+  }
+
+  .content-blog-img-left {
+    flex: 1;
+    position: relative;
+    padding: 65px 22px 30px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .tag-post {
+      opacity: 1;
+    }
+
+    @media (max-width: $screen-max-sm) {
+      .tag-post {
+        opacity: 0;
+        display: none;
+      }
+    }
+
+    @media (max-width: $screen-max-sm) {
+      padding-top: 20px;
+    }
+  }
+
+  @media (max-width: $screen-max-md) {
+    flex-direction: column;
+  }
+}
+
+// POST IMG SHADOW
+.blog-img-shadow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+  color: $white;
+  padding: 70px 22px 30px 22px;
+
+  h2{
+    a{
+      color: $white;
+      text-decoration: none;
+      @include underline-from-left($white);
+    }
+  }
+
+  .text {
+    margin-bottom: 12px;
+  }
+
+  &.blog-video {
+    padding-top: 50px;
+
+    .teaser-video {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: $white;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      position: relative;
+      a{
+        display: block;
+        height: 100%;
+      }
+      span {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 8px;
+        border-color: transparent transparent transparent #000;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  a {
+    &.btn-noborder {
+      color: $white;
+
+      &.with-icon:before {
+        color: $white;
+      }
+    }
+  }
+}
+
+// POST TEXT
+.blog-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  padding: 65px 22px 30px 22px;
+  background-color: $white;
+}

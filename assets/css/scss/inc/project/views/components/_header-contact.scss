@@ -1,0 +1,98 @@
+.header-contact {
+  padding: 0 15px;
+  z-index: 10;
+  .header-contact-block {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include font-size(14px);
+
+    .contact, .opening-time, .phone, .acceo {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      height: 100%;
+      margin: 0 15px;
+
+      i {
+        color: $coolgrey;
+        margin-right: 5px;
+      }
+
+      img {
+        margin-right: 5px;
+      }
+
+      a {
+        color: $white;
+        transition: all .3s;
+
+        &:hover {
+          color: #ccc;
+          transition: all .3s;
+        }
+      }
+    }
+
+    .contact {
+      padding: 0;
+    }
+
+    .opening-time {
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+
+    .socials {
+      display: flex;
+      height: 100%;
+      align-items: center;
+
+      @media (max-width: 840px) {
+        display: none;
+      }
+
+      .socials-block {
+        padding: 15px;
+        border-left: 1px solid $darkgrey;
+        width: 55px;
+        text-align: center;
+        color: $white;
+        transition: all .3s ease-in;
+
+        &.facebook {
+          &:hover {
+            color: $bc-facebook;
+          }
+        }
+        &.instagram {
+          &:hover {
+            color: $bc-instagram-4;
+          }
+        }
+        &.twitter {
+          &:hover {
+            color: $bc-twitter;
+          }
+        }
+        &.pinterest {
+          &:hover {
+            color: $bc-pinterest;
+          }
+        }
+        &.youtube {
+          &:hover {
+            color: $bc-youtube;
+          }
+        }
+        &.feed {
+          &:hover {
+            color: $bc-rss-2;
+          }
+        }
+      }
+    }
+  }
+}

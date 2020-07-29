@@ -1,0 +1,137 @@
+.call {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  .row {
+    position: relative;
+    color: $white;
+  }
+  .background {
+    @include aspect-ratio(1400, 400);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    max-height: 350px;
+    overflow: hidden;
+    @media (max-width: $screen-max-sm) {
+      padding: 20px;
+    }
+
+    &:before {
+      max-height: 400px;
+    }
+  }
+  .block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: $screen-max-xs) {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .title {
+      @media (max-width: $screen-max-sm) {
+        @include font-size(18px);
+      }
+    }
+
+    .btn {
+      margin-top: 30px;
+
+      @media (max-width: $screen-max-sm) {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+form.form-call {
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .api_error,
+  .api_success{
+    min-width: 290px;
+    max-width: 325px;
+    margin-top: 15px;
+    color: #fff;
+    font-family: $rubik-medium;
+  }
+
+  .input-block {
+    position: relative;
+    margin-top: 30px;
+
+    &:before {
+      display: block;
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $primaryred;
+      font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="tel"]{
+      padding: 10px 20px 10px 40px;
+      width: 100%;
+      min-width: 290px;
+      max-width: 325px;
+      color: $black;
+    }
+
+    .btn-call-submit {
+      background-color: $primaryred;
+      border-color: $primaryred;
+      max-width: 170px;
+      margin: auto;
+      transform: perspective(1px);
+      position: relative;
+      transition: all 0.3s;
+      overflow: hidden;
+      display: block;
+      font-size: 1rem;
+      padding: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: initial;
+      color: #fff;
+      border-radius: 0;
+      font-family: $rubik-medium;
+      box-shadow: none;
+      width: 100%;
+
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transform: skew(-50deg);
+        transition-duration: 0.6s;
+        transform-origin: top left;
+        width: 0;
+      }
+
+      &:hover:after {
+        height: 100%;
+        width: 142%;
+        background: darken($primaryred, 10%);
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.main-v3 {
+    padding-top: $header;
+
+    @media (max-width: $screen-max-pad) {
+        padding-top: $header-pad;
+    }
+
+    @media (max-width: $screen-max-md) {
+        padding-top: $header-md;
+    }
+
+    @media (max-width: $screen-max-sm) {
+        padding-top: $header-sm;
+    }
+
+    @media (max-width: $screen-max-xs) {
+        padding-top: $header-xs;
+    }
+
+    @media (max-width: $screen-max-xxs) {
+        padding-top: $header-xxs;
+    }
+}
+
+.main--devis, .main--maintenance{
+  padding-top: 67px;
+}
+
+footer {
+    @media (max-width: $screen-max-md) {
+        margin-bottom: 39px;
+    }
+}

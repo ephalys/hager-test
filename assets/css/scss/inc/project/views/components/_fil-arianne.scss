@@ -1,0 +1,26 @@
+.container-breadcrumb {
+  padding-top: 0;
+  padding-bottom: 0;
+  &+div {
+    //padding-top:0;
+  }
+  .breadcrumb {
+    padding: 0;
+    margin: 10px 0;
+    background-color: #fff;
+    text-transform: uppercase;
+
+    .breadcrumb-item {
+      color: $coolgrey;
+
+      a {
+        color: $coolgrey;
+        @include underline-from-left($coolgrey);
+
+        //&:hover {
+        //  text-decoration: underline;
+        //}
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.list-garanties {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  .text {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+      margin-bottom: 6px;
+      position: relative;
+    }
+  }
+}

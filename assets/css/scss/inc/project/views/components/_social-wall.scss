@@ -1,0 +1,90 @@
+/*
+** Masonery grid - setting app.js
+*/
+
+.socialwall-grid {
+  .social-item {
+    margin-bottom: 30px;
+  }
+}
+
+.node--type-socialwall {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.19);
+
+  .img-block {
+    display: block;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .text-block {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    min-height: 100px;
+
+    @media (max-width: $screen-max-md) {
+      //margin: 15px;
+    }
+    .social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .social-left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        i {
+          color: $white;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @media (max-width: $screen-max-xs) {
+            width: 24px;
+            height: 24px;
+            font-size: 12px;
+          }
+
+          &.icon-facebook {
+            background-color: $bc-facebook;
+          }
+
+          &.icon-youtube {
+            background-color: $bc-youtube;
+          }
+        }
+
+        .social-name {
+          margin-left: 12px;
+          @media (max-width: $screen-max-xs) {
+            margin-left: 5px;
+          }
+
+        }
+      }
+
+      margin-bottom: 10px;
+
+      .date {
+        text-align: right;
+      }
+    }
+    .text-base{
+      overflow-wrap: break-word;
+      a{
+        color: $black;
+        text-decoration: underline;
+        @include transition(all .5s ease);
+        &:hover, &:focus{
+          color: $primaryred;
+        }
+      }
+    }
+  }
+}
