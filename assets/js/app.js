@@ -1,8 +1,6 @@
 (function($) {
   $(document).ready(function() {
     var app = {
-      swiperBullet: null,
-      swiperNavbar: null,
       isMobile: false,
       isTablet: false,
       breakPointTablet: 992,
@@ -10,14 +8,12 @@
       init: function() {
         app.handleResize();
         app.responsiveDetection();
-        app.swiperHeaderInit();
+        app.swiperInit();
       },
 
       handleResize: function() {
         $(window).on('resize', function(){
           app.responsiveDetection();
-          app.swiperBulletInit();
-          app.navbarInit();
         });
       },
 
@@ -27,19 +23,17 @@
       },
 
       // Swiper header
-      swiperHeaderInit: function () {
-        const _swiperVerticalClass = '.header-custom .swiper-container.swiper-bullet';
-        const _slides = '.header-custom .swiper-container.swiper-bullet .swiper-slide';
-        if($(_swiperVerticalClass).length > 0 && $(_slides).length > 1) {
-          var _swiperBulletHeader = new Swiper (_swiperVerticalClass, {
+      swiperInit: function () {
+        const _swiperHomeDiv = '.swiper-home';
+        if($(_swiperHomeDiv).length > 0) {
+          var _swiperHome = new Swiper (_swiperHomeDiv, {
             slidesPerView: 1,
             loop: true,
             simulateTouch: true,
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-              watchOverflow: true
-            }
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
           })
         }
       },

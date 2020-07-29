@@ -37,10 +37,10 @@ var paths = {
             './assets/js/*.js'
         ],
         src: [
+            './assets/js/vendor/jquery.min.js',
             './assets/js/vendor/popper.min.js',
             './assets/js/vendor/bootstrap.min.js',
             './assets/js/vendor/swiper.min.js',
-            './assets/js/vendor/font-awesome.min.js',
             './assets/js/app.js',
         ],
         dist: './assets/js/dist/'

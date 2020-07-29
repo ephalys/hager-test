@@ -1,5 +1,3 @@
-$enable-responsive-font-sizes: true;
-
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7,30 +5,14 @@ $enable-responsive-font-sizes: true;
   -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
 }
 
-html{
-  font-size: 13px;
-}
-
 html, body {
   height: 100%;
-}
-
-body {
-  font-family: $rubik-regular;
-
-  &.overflow{
-    overflow: hidden;
-  }
-  &.maintenance-page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  display: inline-block;
   &:hover {
     text-decoration: none;
     color: inherit;
@@ -41,179 +23,14 @@ p:last-child {
   margin-bottom: 0;
 }
 
-strong, b {
-  font-family: $rubik-bold;
+ul {
+  list-style: none;
 }
 
-.container, .container-fluid {
-  padding-bottom: 25px;
-  padding-top: 25px;
-}
-.title-xxl {
-  font-size: 4rem;
-  line-height: 1.3;
+h1 {
+  font-size: 3.5rem;
 
-  @media (max-width: $screen-max-sm) {
-    font-size: 2rem;
+  @media (max-width: $screen-max-xs) {
+    font-size: 2.5rem;
   }
 }
-
-.title-xl {
-  font-size: 3rem;
-  line-height: 1.3;
-}
-
-.title-l {
-  font-size: 2.1rem;
-  line-height: 1.3;
-}
-
-.title-m {
-  font-size: 1.9rem;
-  line-height: 1.3;
-}
-
-.title-s {
-  font-size: 1.7rem;
-  line-height: 1.3;
-}
-
-.title-base {
-  font-size: 1.6rem;
-  line-height: 1.3;
-}
-
-.title-label {
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-family: $rubik-medium;
-  line-height: 1.3;
-}
-
-.text-xl {
-  font-size: 1.3rem;
-  line-height: 1.3;
-}
-
-.text-l {
-  font-size: 1.2rem;
-  line-height: 1.3;
-}
-
-.text-base {
-  font-size: 1.1rem;
-  line-height: 1.3;
-}
-
-.text-s {
-  font-size: 1rem;
-  line-height: 1.3;
-}
-
-.text-xs {
-  font-size: 0.9rem;
-  line-height: 1.3;
-}
-.text-xxs {
-  font-size: 0.8rem;
-  line-height: 1.3;
-}
-
-.text-xxxs {
-  font-size: 0.7rem;
-  line-height: 1.3;
-}
-
-.custom-bold {
-  font-family: $rubik-bold;
-}
-
-.custom-medium {
-  font-family: $rubik-medium;
-}
-
-.custom-quote {
-  font-family: $playfair-regular;
-}
-
-.custom-underline {
-  text-decoration: underline;
-}
-
-.label {
-  min-width: 95px;
-  text-transform: uppercase;
-  color: $white;
-  font-size: pxToRem(12);
-  letter-spacing: 1px;
-  font-family: $rubik-medium;
-  display: inline-block;
-  text-align: center;
-  font-weight: normal !important;
-
-  a {
-    color: $white;
-    padding: 5px;
-    display: block;
-  }
-
-  p, span {
-    padding: 5px;
-    display: block;
-  }
-}
-
-.text-red {
-  color: $primaryred;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.admin-tabs__link[href$="clone"]{
-  background: $navy url("../../img/admin-tabs.svg#revisions") no-repeat center / 25px 25px
-}
-.menu-open-button{
-  cursor: pointer;
-}
-/*.tabs.primary{
-  position: fixed;
-  left: 0;
-  top: 200px;
-  z-index: 3;
-  overflow: hidden;
-  background-color: $red;
-  padding: 5px 10px 5px 20px;
-  opacity: 0.5;
-  white-space: nowrap;
-  @include transform(translateX(-92%));
-  @include transition(transform .5s ease);
-  &:hover, &:focus{
-    opacity: 1;
-    @include transform(translateX(0));
-  }
-  li{
-    margin-right: 0;
-    a{
-      color: #fff;
-      &.is-active{
-        background-color: $red;
-        color: #fff;
-        @include underline-from-left-active(#fff);
-      }
-      &:hover{
-        background: $red;
-        @include underline-from-left(#fff);
-      }
-    }
-  }
-  .tabs-cog{
-    display: inline-block;
-    color: $red;
-    width: 29px;
-    text-align: center;
-  }
-}*/

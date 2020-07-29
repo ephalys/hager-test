@@ -1,0 +1,54 @@
+.hero {
+    .swiper-home, .swiper-wrapper, .swiper-slide {
+       min-height: calc(100vh - 60px);
+    }
+
+    .swiper-slide {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 150px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: $white;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $black;
+            opacity: .3;
+            z-index: 0;
+        }
+
+        @media (min-width: $screen-min-xs) and (max-width: $screen-max-sm) {
+            padding: 50px;
+        }
+
+        @media (max-width: $screen-max-xs) {
+            padding: 30px;
+        }
+
+        .content {
+            z-index: 2;
+            max-width: 80%;
+
+            @media (max-width: $screen-max-md) {
+                padding: 50px;
+                max-width: 100%;
+            }
+
+            a {
+                margin-top: 2rem;
+            }
+        }
+    }
+    .swiper-button-next, .swiper-button-prev{
+        &:after {
+            color: $white;
+            font-size: 40px;
+        }
+    }
+}
