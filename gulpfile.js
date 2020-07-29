@@ -39,13 +39,7 @@ var paths = {
         src: [
             './assets/js/vendor/popper.min.js',
             './assets/js/vendor/bootstrap.min.js',
-            './assets/js/vendor/imagesloaded.pkgd.min.js',
-            './assets/js/vendor/isotope.pkgd.min.js',
-            './assets/js/vendor/masonry.pkgd.min.js',
-            './assets/js/vendor/anijs-min.js',
-            './assets/js/vendor/anijs-helper-scrollreveal-min.js',
             './assets/js/vendor/swiper.min.js',
-            './assets/js/vendor/bootstrap-select.min.js',
             './assets/js/app.js',
         ],
         dist: './assets/js/dist/'
