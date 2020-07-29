@@ -1,0 +1,44 @@
+.services {
+    padding: 50px 15px;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 50px;
+
+        @media (max-width: $screen-max-sm) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &-list {
+        display: flex;
+
+        @media (max-width: $screen-max-sm) {
+            flex-direction: column;
+        }
+
+        .services-item {
+            margin: 0 30px;
+
+            @media (max-width: $screen-max-sm) {
+                margin: 30px 0 0;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            img {
+                width: 100%;
+                max-width: 150px;
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+}
