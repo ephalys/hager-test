@@ -8,6 +8,7 @@
     &.button-red {
         background-color: $primary;
         transition: color, background-color .3s;
+        color: $white;
 
         &:hover {
             background-color: $white;
@@ -15,6 +16,7 @@
             color: $primary;
         }
     }
+
 
     &.button-white {
         background-color: $white;

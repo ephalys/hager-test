@@ -1,0 +1,54 @@
+.modal {
+    &-body {
+        display: flex;
+        @media (max-width: $screen-max-sm) {
+            flex-direction: column;
+        }
+        img {
+            width: 100%;
+        }
+
+        &-left, &-right {
+            width: 50%;
+
+            @media (max-width: $screen-max-sm) {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+
+        &-left {
+            padding-right: 15px;
+        }
+        &-right {
+            padding-left: 15px;
+            font-size: 13px;
+            h6 {
+                margin-bottom: 15px;
+                font-size: 16px;
+            }
+
+            .buttons-container {
+                margin-top: 30px;
+
+                .button-red {
+                    &:hover {
+                        color: $primary;
+                        background-color: $white;
+                        border: 1px solid $primary;
+                    }
+                }
+
+                .button-white {
+                    border-color: $primary;
+                    &:hover {
+                        color: $white;
+                        background-color: $primary;
+                        border: 1px solid $primary;
+                    }
+                }
+            }
+        }
+    }
+}
